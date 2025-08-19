@@ -62,15 +62,15 @@ experience = [
         ],
     },
     {
-        "title": "Bachelor of Technology in Computer Science",
-        "company": "University",
+        "title": "Bachelor of Technology in Electronics and Communication Engineering",
+        "company": "IIIT Bhubaneswar",
         "period": "Aug 2017 - Jun 2021",
-        "description": "Undergraduate degree in Computer Science with strong foundation in programming and software engineering.",
+        "description": "Undergraduate degree in ECE with strong foundation in programming and VLSI design.",
         "skills": [
             "Programming Fundamentals",
             "Data Structures",
             "Algorithms",
-            "Software Engineering",
+            "Systems and signals",
         ],
     },
     {
