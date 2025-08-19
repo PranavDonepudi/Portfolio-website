@@ -1,0 +1,122 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Experience - Pranav Donepudi's Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('home') }}" class="nav-logo">Pranav Donepudi</a>
+            <div class="nav-menu">
+                <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+                <a href="{{ url_for('projects_page') }}" class="nav-link">Projects</a>
+                <a href="{{ url_for('experience_page') }}" class="nav-link active">Experience</a>
+                <a href="{{ url_for('home') }}#contact" class="nav-link">Contact</a>
+                <a href="/static/files/Pranav_Donepudi.pdf" download class="nav-link resume-btn">Download Resume</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Experience Section -->
+    <section class="experience-page">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Experience & Education</h1>
+                <p class="page-description">My educational background and technical skills in software development.</p>
+            </div>
+            
+            <div class="experience-timeline">
+                {% for exp in experience %}
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">{{ exp.title }}</h3>
+                        <h4 class="timeline-company">{{ exp.company }}</h4>
+                        <span class="timeline-period">{{ exp.period }}</span>
+                        <p class="timeline-description">{{ exp.description }}</p>
+                        <div class="skills-tags">
+                            {% for skill in exp.skills %}
+                            <span class="skill-tag">{{ skill }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Skills Section -->
+            <div class="skills-section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <div class="skills-list">
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">Java</span>
+                            <span class="skill-item">JavaScript</span>
+                            <span class="skill-item">C#</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Web Technologies</h3>
+                        <div class="skills-list">
+                            <span class="skill-item">React</span>
+                            <span class="skill-item">Node.js</span>
+                            <span class="skill-item">Express.js</span>
+                            <span class="skill-item">HTML/CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Databases & Tools</h3>
+                        <div class="skills-list">
+                            <span class="skill-item">MongoDB</span>
+                            <span class="skill-item">Redis</span>
+                            <span class="skill-item">Google Cloud</span>
+                            <span class="skill-item">Socket.io</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Data Science</h3>
+                        <div class="skills-list">
+                            <span class="skill-item">Machine Learning</span>
+                            <span class="skill-item">Data Analysis</span>
+                            <span class="skill-item">Pandas</span>
+                            <span class="skill-item">NLTK</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Pranav Donepudi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+
+# Project Images Directory
+# Add your project images here:
+# - picchatpp.png (MERN Chat App screenshot)
+# - picpacman.webp (Pacman game screenshot)
+# - pic02.png (URL shortener diagram)
+# - pic03.png (Sentiment analysis visualization)
+# - pic04.png (Genomic data filter illustration)
