@@ -1,13 +1,8 @@
 from flask import Flask, render_template
 import os
 
-app = Flask(
-    __name__,
-    template_folder=os.path.join(os.path.dirname(__file__), "..", "templates"),
-    static_folder=os.path.join(os.path.dirname(__file__), "..", "assets"),
-    static_url_path="/assets",
-)
-
+TEMPLATES = os.path.join(os.path.dirname(__file__), "..", "templates")
+app = Flask(__name__, template_folder=TEMPLATES, static_folder=None)
 # ---- Your data (copied from your main.py) ----
 projects = [
     {
