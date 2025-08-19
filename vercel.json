@@ -1,13 +1,10 @@
 {
   "version": 2,
   "functions": {
-    "api/**/*.py": { "runtime": "python3.11" }
+    "api/index.py": { "runtime": "python3.11" }
   },
   "routes": [
-    { "src": "/(assets|images|static|css|js)/(.*)", "dest": "/$1/$2" },
-    { "src": "/projects", "dest": "/api/index.py" },
-    { "src": "/experience", "dest": "/api/index.py" },
-    { "src": "/$", "dest": "/api/index.py" },
-    { "src": "/(.*)", "status": 404, "dest": "/api/index.py" }
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "/api/index.py" }
   ]
 }
