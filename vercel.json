@@ -4,9 +4,10 @@
     "api/**/*.py": { "runtime": "python3.11" }
   },
   "routes": [
-    { "src": "/(assets|images|css|js|static)/(.*)", "dest": "/$1/$2" },
+    { "src": "/(assets|images|static|css|js)/(.*)", "dest": "/$1/$2" },
     { "src": "/projects", "dest": "/api/index.py" },
     { "src": "/experience", "dest": "/api/index.py" },
-    { "src": "/(.*)", "dest": "/api/index.py" }
+    { "src": "/$", "dest": "/api/index.py" },
+    { "src": "/(.*)", "status": 404, "dest": "/api/index.py" }
   ]
 }
